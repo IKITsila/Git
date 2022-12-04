@@ -9,9 +9,17 @@ double my_pow(double num, int degree)
     }
 
     double res = 1;
-   
-    for (int i = 0; i < degree; i++) {
-        res *= num;
+    
+    if (degree < 0) {
+        for (int i = degree; i < 0; i++) {
+            res /= num;
+        }
+
+    }
+    else {
+        for (int i = 0; i < degree; i++) {
+            res *= num;
+        }
     }
     
     return res;
